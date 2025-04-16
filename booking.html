@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpg" href="Images/favicon.jpg" />
+  <title>Đặt Lịch - Serenity Spa</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/booking.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <a href="index.html" class="header__logo logo">
+          <img src="Images/logo.jpg" alt="Serenity Spa Logo">
+          Serenity Spa
+        </a>
+        <div class="header__navigation">
+          <div class="header__menu menu">
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="index.html" class="menu__link">Trang Chủ</a></li>
+                <li class="menu__item"><a href="about.html" class="menu__link">Về Chúng Tôi</a></li>
+                <li class="menu__item"><a href="services.html" class="menu__link">Dịch Vụ</a></li>
+                <li class="menu__item"><a href="contact.html" class="menu__link">Liên Hệ</a></li>
+              </ul>
+              <a href="booking.html" class="actions-header__button" style="border: none !important; outline: none !important; box-shadow: none !important; text-decoration: none !important;">Đặt Lịch Ngay</a>
+            </nav>
+          </div>
+          <div class="header__actions actions-header">
+            <!-- <a href="booking.html" class="actions-header__button" style="border: none !important; outline: none !important; box-shadow: none !important; text-decoration: none !important;">Đặt Lịch Ngay</a> -->
+            <button type="button" class="menu__icon icon-menu"><span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page">
+      <section class="page__main main">
+        <video autoplay muted loop playsinline class="main__video">
+          <source src="Video/clip.mp4" type="video/mp4">
+        </video>
+        <div class="main__container">
+          <h3 class="main__caption">ĐẶT LỊCH DỊCH VỤ</h3>
+          
+          <div class="main__text">
+            Đặt lịch dịch vụ spa của chúng tôi ngay hôm nay để được trải nghiệm những dịch vụ chất lượng cao.
+          </div>
+        </div>
+      </section>
+      <section class="page__booking booking">
+        <div class="booking__container">
+          <div class="booking__content">
+            <div class="booking__header">
+              <h1 class="section-title">Đặt Lịch Dịch Vụ</h1>
+              <p class="booking__text">Vui lòng điền đầy đủ thông tin bên dưới để đặt lịch dịch vụ của chúng tôi.</p>
+            </div>
+            <form class="form-booking" id="bookingForm">
+              <div class="form-booking__row">
+                <div class="form-booking__column">
+                  <label for="name" class="form-booking__label">Họ và tên <span class="required">*</span></label>
+                  <input type="text" name="fullName" class="form-booking__input" placeholder="Nhập họ và tên" required>
+                </div>
+                <div class="form-booking__column">
+                  <label for="phone" class="form-booking__label">Số điện thoại <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-booking__input" 
+                         placeholder="Nhập số điện thoại (10-11 số)" 
+                         pattern="[0-9]{10,11}"
+                         title="Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số)"
+                         required>
+                </div>
+              </div>
+              <div class="form-booking__row">
+                <div class="form-booking__column">
+                  <label for="email" class="form-booking__label">Email <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" class="form-booking__input" placeholder="Nhập email" required>
+                </div>
+                <div class="form-booking__column">
+                  <label for="service" class="form-booking__label">Dịch Vụ *</label>
+                  <select id="service" name="service" class="form-booking__input" required>
+                    <option value="">Chọn dịch vụ</option>
+                    <option value="goi-spa-toan-dien">Gói Spa Toàn Diện (90-120 phút) - 1.200.000đ</option>
+                    <option value="cham-soc-da-mat">Chăm Sóc Da Mặt (60-90 phút) - 800.000đ</option>
+                    <option value="lieu-phap-co-the">Liệu Pháp Cơ Thể (60-90 phút) - 900.000đ</option>
+                    <option value="massage-thu-gian">Massage Thư Giãn (60 phút) - 600.000đ</option>
+                    <option value="tam-hong-ngoai">Tắm Hồng Ngoại (30 phút) - 400.000đ</option>
+                    <option value="xong-hoi">Xông Hơi (30 phút) - 300.000đ</option>
+                    <option value="tay-te-bao-chet">Tẩy Tế Bào Chết (30 phút) - 500.000đ</option>
+                    <option value="dap-mat-na">Đắp Mặt Nạ (30 phút) - 400.000đ</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-booking__row">
+                <div class="form-booking__column">
+                  <label for="date" class="form-booking__label">Ngày hẹn <span class="required">*</span></label>
+                  <input type="date" id="date" name="date" class="form-booking__input" required>
+                </div>
+                <div class="form-booking__column">
+                  <label for="time" class="form-booking__label">Giờ hẹn <span class="required">*</span></label>
+                  <input type="time" id="time" name="time" class="form-booking__input" required>
+                </div>
+              </div>
+              <div class="form-booking__row">
+                <div class="form-booking__column">
+                  <label for="notes" class="form-booking__label">Ghi chú</label>
+                  <textarea id="notes" name="notes" class="form-booking__textarea" placeholder="Nhập ghi chú (nếu có)"></textarea>
+                </div>
+              </div>
+              <div class="form-booking__row">
+                <div class="form-booking__column">
+                  <label class="form-booking__checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <span>Tôi đồng ý với <a href="#" class="form-booking__link">điều khoản và điều kiện</a> *</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-booking__row">
+                <div class="form-booking__column form-booking__column--full">
+                  <button type="submit" class="form-booking__button" style="border: none !important; outline: none !important; box-shadow: none !important; text-decoration: none !important;">Đặt Lịch Ngay</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- <section class="info">
+        <div class="info__container">
+          <div class="booking-info__header">
+            <h1 class="section-title">Thông Tin Bổ Sung</h1>
+            <p class="booking-info__text">Một số thông tin hữu ích về quy trình và chính sách của chúng tôi.</p>
+          </div>
+          <div class="info__items">
+            <div class="info-item">
+              <h3 class="info-item__title">Giờ Làm Việc</h3>
+              <p class="info-item__text">Thứ 2 - Chủ Nhật: 09:00 - 20:00</p>
+            </div>
+            <div class="info-item">
+              <h3 class="info-item__title">Địa Chỉ</h3>
+              <p class="info-item__text">123 Đường Spa, Quận 1, TP.HCM</p>
+            </div>
+            <div class="info-item">
+              <h3 class="info-item__title">Liên Hệ</h3>
+              <p class="info-item__text">Hotline: 0123 456 789<br>Email: info@serenityspa.com</p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+
+      <section class="page__testimonials testimonials">
+        <div class="testimonials__container">
+          <h2 class="testimonials__title title">Khách Hàng Nói Gì Về Chúng Tôi</h2>
+          <div class="testimonials__slider">
+            <div class="testimonial-card">
+              <div class="testimonial-card__content">
+                <div class="testimonial-card__rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <p class="testimonial-card__text">"Trải nghiệm tuyệt vời! Nhân viên rất chuyên nghiệp và dịch vụ chất lượng cao. Tôi đã thử nhiều spa nhưng Serenity Spa thực sự nổi bật với sự tận tâm và kỹ thuật chuyên môn cao."</p>
+                <div class="testimonial-card__author">
+                  <img src="Images/CaNhan1.jpg" alt="Khách hàng 1" class="testimonial-card__avatar">
+                  <div class="testimonial-card__info">
+                    <h4 class="testimonial-card__name">Nguyễn Bích An</h4>
+                    <p class="testimonial-card__service">Trẻ Hoá Da</p>
+                    <p class="testimonial-card__date">Đã sử dụng dịch vụ: 15/03/2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-card__content">
+                <div class="testimonial-card__rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <p class="testimonial-card__text">"Không gian thư giãn, dịch vụ chuyên nghiệp. Tôi đặc biệt ấn tượng với quy trình chăm sóc da mặt. Da tôi đã cải thiện rõ rệt sau 3 buổi điều trị."</p>
+                <div class="testimonial-card__author">
+                  <img src="Images/CaNhan2.jpg" alt="Khách hàng 2" class="testimonial-card__avatar">
+                  <div class="testimonial-card__info">
+                    <h4 class="testimonial-card__name">Trần Thuỳ Linh</h4>
+                    <p class="testimonial-card__service">Gói Thư Giãn Toàn Diện</p>
+                    <p class="testimonial-card__date">Đã sử dụng dịch vụ: 10/03/2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-card__content">
+                <div class="testimonial-card__rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <p class="testimonial-card__text">"Chuyên viên rất tận tâm, kỹ thuật massage tuyệt vời. Tôi đã giảm được 3kg sau 1 tháng sử dụng dịch vụ giảm béo. Cảm ơn Serenity Spa!"</p>
+                <div class="testimonial-card__author">
+                  <img src="Images/CaNhan3.jpg" alt="Khách hàng 3" class="testimonial-card__avatar">
+                  <div class="testimonial-card__info">
+                    <h4 class="testimonial-card__name">Trương Thiên Ân</h4>
+                    <p class="testimonial-card__service">Giảm Béo</p>
+                    <p class="testimonial-card__date">Đã sử dụng dịch vụ: 05/03/2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- <section class="page__cta cta">
+        <div class="cta__container">
+          <h2 class="cta__title">Cần Hỗ Trợ?</h2>
+          <p class="cta__text">Liên hệ với chúng tôi nếu bạn cần tư vấn thêm về dịch vụ hoặc quy trình đặt lịch.</p>
+          <a href="contact.html" class="cta__button">Liên Hệ Ngay</a>
+        </div>
+      </section> -->
+
+
+      <section class="reviews">
+        <div class="reviews__container">
+          <h2 class="testimonials__title title">Đánh Giá Dịch Vụ</h2>
+          <p class="reviews__subtitle">Chia sẻ trải nghiệm của bạn với chúng tôi</p>
+          <form class="reviews__form">
+            <div class="reviews__form-row">
+              <div class="reviews__form-column">
+                <label for="review-name" class="reviews__label">Họ và tên</label>
+                <input type="text" id="review-name" class="reviews__input" required>
+              </div>
+              <div class="reviews__form-column">
+                <label for="review-service" class="reviews__label">Dịch vụ đã sử dụng</label>
+                <input type="text" id="review-service" class="reviews__input" required>
+              </div>
+            </div>
+            <div class="reviews__form-row">
+              <div class="reviews__form-column">
+                <label for="review-rating" class="reviews__label">Đánh giá</label>
+                <div class="reviews__rating">
+                  <span class="star" data-rating="1">★</span>
+                  <span class="star" data-rating="2">★</span>
+                  <span class="star" data-rating="3">★</span>
+                  <span class="star" data-rating="4">★</span>
+                  <span class="star" data-rating="5">★</span>
+                </div>
+                <input type="hidden" id="review-rating" name="rating" required>
+              </div>
+            </div>
+            <div class="reviews__form-row">
+              <div class="reviews__form-column reviews__form-column--full">
+                <label for="review-comment" class="reviews__label">Nhận xét của bạn</label>
+                <textarea id="review-comment" class="reviews__textarea" rows="5" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="reviews__button">Gửi Đánh Giá</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <a href="#" class="footer__policy">Chính Sách Bảo Mật – Điều Khoản Sử Dụng</a>
+        <a href="" class="footer__logo logo">
+          <img src="Images/logo.jpg" alt="Serenity Spa Logo">
+          Serenity Spa
+        </a>
+        <div class="footer__copyright">
+          Copyright © 2025 – Bản Quyền Thuộc Về Serenity Spa
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="NeUeqGNK-P7-tkkzx8iEc";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+  <script src="js/header.js"></script>
+  <script src="js/booking.js"></script>
+  <script>
+    // Khởi tạo form handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.form-booking');
+      if (form) {
+        form.addEventListener('submit', handleFormSubmit);
+      }
+    });
+  </script>
+</body>
+
+</html> 

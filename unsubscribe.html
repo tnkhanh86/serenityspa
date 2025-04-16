@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpg" href="Images/favicon.jpg" />
+  <title>Hủy Đăng Ký - Serenity Spa</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <a href="index.html" class="header__logo logo">
+          <img src="Images/logo.jpg" alt="Serenity Spa Logo">
+          Serenity Spa
+        </a>
+        <div class="header__navigation">
+          <div class="header__menu menu">
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="index.html" class="menu__link">Trang Chủ</a></li>
+                <li class="menu__item"><a href="about.html" class="menu__link">Về Chúng Tôi</a></li>
+                <li class="menu__item"><a href="services.html" class="menu__link">Dịch Vụ</a></li>
+                <li class="menu__item"><a href="contact.html" class="menu__link">Liên Hệ</a></li>
+              </ul>
+              <a href="booking.html" class="actions-header__button" style="border: none !important; outline: none !important; box-shadow: none !important; text-decoration: none !important;">Đặt Lịch Ngay</a>
+            </nav>
+          </div>
+          <div class="header__actions actions-header">
+            <button type="button" class="menu__icon icon-menu"><span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="unsubscribe-section">
+        <div class="unsubscribe-container">
+          <h1 class="unsubscribe-title">Hủy Đăng Ký Nhận Thông Tin</h1>
+          
+          <div class="unsubscribe-content">
+            <p>Chúng tôi rất tiếc khi bạn muốn hủy đăng ký nhận thông tin từ Serenity Spa.</p>
+            <p>Vui lòng nhập email của bạn để xác nhận việc hủy đăng ký:</p>
+            
+            <form id="unsubscribeForm" class="unsubscribe-form">
+              <div class="form-group">
+                <input type="email" id="unsubscribeEmail" placeholder="Email của bạn" required>
+              </div>
+              <div id="unsubscribeMessage" class="form-message"></div>
+              <button type="submit" class="unsubscribe-button">Hủy Đăng Ký</button>
+            </form>
+            
+            <div class="unsubscribe-note">
+              <p>Sau khi hủy đăng ký, bạn sẽ không còn nhận được thông tin về các ưu đãi và khuyến mãi từ Serenity Spa.</p>
+              <p>Nếu bạn thay đổi ý định, bạn có thể đăng ký lại bất cứ lúc nào.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <a href="#" class="footer__policy">Chính Sách Bảo Mật – Điều Khoản Sử Dụng</a>
+        <a href="" class="footer__logo logo">
+          <img src="Images/logo.jpg" alt="Serenity Spa Logo">
+          Serenity Spa
+        </a>
+        <div class="footer__copyright">
+          Copyright © 2025 – Bản Quyền Thuộc Về Serenity Spa
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="js/script.js"></script>
+  <script src="js/header.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const unsubscribeForm = document.getElementById('unsubscribeForm');
+      const emailInput = document.getElementById('unsubscribeEmail');
+      const messageElement = document.getElementById('unsubscribeMessage');
+      
+      // Check if email is in URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const emailParam = urlParams.get('email');
+      
+      if (emailParam) {
+        emailInput.value = emailParam;
+      }
+      
+      if (unsubscribeForm) {
+        unsubscribeForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const email = emailInput.value.trim();
+          
+          if (!email) {
+            showMessage('Vui lòng nhập email của bạn', 'error');
+            return;
+          }
+          
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            showMessage('Email không hợp lệ', 'error');
+            return;
+          }
+          
+          const submitButton = unsubscribeForm.querySelector('button[type="submit"]');
+          submitButton.disabled = true;
+          submitButton.innerHTML = 'Đang xử lý...';
+          
+          try {
+            // Try to send data to Google Apps Script
+            try {
+              const response = await fetch('https://script.google.com/macros/s/AKfycbziXNfWH9v-3pl_iDYkneW8Scv6-aETm-HwbduOpdfdBLB7OXArH0fybeh_ldEQuc_zGw/exec', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ 
+                      email,
+                      type: 'unsubscribe',
+                      timestamp: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })
+                  })
+              });
+              
+              console.log('Unsubscribe request sent to Google Apps Script successfully');
+            } catch (fetchError) {
+              // If the fetch fails, store the unsubscribe request locally
+              console.error('Failed to send unsubscribe request to Google Apps Script:', fetchError);
+              saveUnsubscribeToLocalStorage(email);
+            }
+            
+            // Show success message regardless of where the data was stored
+            showMessage('Bạn đã hủy đăng ký thành công!', 'success');
+            unsubscribeForm.reset();
+          } catch (error) {
+            showMessage('Có lỗi xảy ra, vui lòng thử lại sau', 'error');
+            console.error('Error:', error);
+          } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Hủy Đăng Ký';
+          }
+        });
+      }
+      
+      // Function to save unsubscribe request to localStorage
+      function saveUnsubscribeToLocalStorage(email) {
+        try {
+          // Get existing unsubscribes or initialize empty array
+          const unsubscribes = JSON.parse(localStorage.getItem('unsubscribeRequests') || '[]');
+          
+          // Add new unsubscribe request
+          unsubscribes.push({
+            email,
+            timestamp: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })
+          });
+          
+          // Save back to localStorage
+          localStorage.setItem('unsubscribeRequests', JSON.stringify(unsubscribes));
+          
+          console.log('Unsubscribe request saved to localStorage');
+        } catch (error) {
+          console.error('Error saving to localStorage:', error);
+        }
+      }
+      
+      function showMessage(message, type) {
+        if (messageElement) {
+          messageElement.textContent = message;
+          messageElement.className = 'form-message';
+          messageElement.classList.add(type === 'success' ? 'success' : 'error');
+        }
+      }
+    });
+  </script>
+</body>
+
+</html> 

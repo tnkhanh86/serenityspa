@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpg" href="Images/favicon.jpg" />
+  <title>Liên Hệ - Serenity Spa</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <a href="index.html" class="header__logo logo">
+          <img src="Images/logo.jpg" alt="Serenity Spa Logo">
+          Serenity Spa
+        </a>
+        <div class="header__navigation">
+          <div class="header__menu menu">
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="index.html" class="menu__link">Trang Chủ</a></li>
+                <li class="menu__item"><a href="about.html" class="menu__link">Về Chúng Tôi</a></li>
+                <li class="menu__item"><a href="services.html" class="menu__link">Dịch Vụ</a></li>
+                <li class="menu__item"><a href="contact.html" class="menu__link">Liên Hệ</a></li>
+              </ul>
+              <a href="booking.html" class="actions-header__button" style="border: none !important; outline: none !important; box-shadow: none !important; text-decoration: none !important;">Đặt Lịch Ngay</a>
+            </nav>
+          </div>
+          <div class="header__actions actions-header">
+            <button type="button" class="menu__icon icon-menu"><span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page">
+      <section class="page__main main">
+        <video autoplay muted loop playsinline class="main__video">
+          <source src="Video/clip.mp4" type="video/mp4">
+        </video>
+        <div class="main__container">
+          <h3 class="main__caption">Liên Hệ</h3>
+          <h1 class="main__title">Liên Hệ Với Chúng Tôi</h1>
+          <div class="main__text">
+            Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất về các dịch vụ spa.
+          </div>
+        </div>
+      </section>
+
+      <section class="page__contact contact">
+        <div class="contact__container">
+          <!-- Contact Info Cards -->
+          <div class="contact__info">
+            <div class="contact__cards">
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <img src="Images/address.svg" alt="Địa chỉ">
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Địa Chỉ</h3>
+                  <p class="contact-card__text">123 Đường Spa, Quận 1, TP.HCM</p>
+                  <p class="contact-card__text">Tầng 15, Tòa nhà Serenity Center</p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <img src="Images/phone.svg" alt="Điện thoại">
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Điện Thoại</h3>
+                  <p class="contact-card__text">+84 123 456 789</p>
+                  <p class="contact-card__text">+84 987 654 321 (Hotline)</p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <img src="Images/email.svg" alt="Email">
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Email</h3>
+                  <p class="contact-card__text">info@serenityspa.com</p>
+                  <p class="contact-card__text">support@serenityspa.com</p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <img src="Images/open.png" alt="Giờ làm việc">
+                </div>
+                <div class="contact-card__content">
+                  <h3 class="contact-card__title">Giờ Làm Việc</h3>
+                  <p class="contact-card__text">Thứ 2 - Chủ Nhật: 10:00 - 22:00</p>
+                  <!-- <p class="contact-card__text">Thứ 7 - Chủ Nhật: 10:00 - 20:00</p> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="contact__social">
+              <h3 class="contact__social-title">Kết Nối Với Chúng Tôi</h3>
+              <div class="social-links">
+                <a href="#" class="social-link" title="Facebook">
+                  <img src="Images/facebook.svg" alt="Facebook">
+                </a>
+                <a href="#" class="social-link" title="Instagram">
+                  <img src="Images/instagram.svg" alt="Instagram">
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                  <img src="Images/twitter.svg" alt="Twitter">
+                </a>
+              </div>
+              <p class="contact__social-text">Theo dõi chúng tôi để nhận những ưu đãi đặc biệt</p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact__form">
+            <h2 class="contact__form-title">Gửi Tin Nhắn</h2>
+            <form id="contactForm" class="form">
+              <div class="form__group">
+                <label for="name" class="form__label">Họ và Tên</label>
+                <input type="text" id="name" name="name" class="form__input" required>
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label">Email</label>
+                <input type="email" id="email" name="email" class="form__input" required>
+              </div>
+              <div class="form__group">
+                <label for="phone" class="form__label">Số Điện Thoại</label>
+                <input type="tel" id="phone" name="phone" class="form__input" required>
+              </div>
+              <div class="form__group">
+                <label for="subject" class="form__label">Tiêu Đề</label>
+                <input type="text" id="subject" name="subject" class="form__input" required>
+              </div>
+              <div class="form__group">
+                <label for="message" class="form__label">Nội Dung</label>
+                <textarea id="message" name="message" class="form__textarea" required></textarea>
+              </div>
+              <button type="submit" class="form__button">Gửi Tin Nhắn</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="page__map map">
+        <div class="map__container">
+          <div class="map__content">
+            <h2 class="map__title">Vị trí của chúng tôi</h2>
+            <div class="map__frame">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197956!2d106.69877!3d10.775583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ2JzM1LjYiTiAxMDbCsDQxJzU1LjYiRQ!5e0!3m2!1svi!2s!4v1620000000000!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+<!--
+            <div class="map__info">
+              <div class="map__address">
+                <h3 class="map__info-title">Địa Chỉ</h3>
+                <p class="map__info-text">123 Đường Spa, Quận 1, TP.HCM</p>
+                <p class="map__info-subtext">Tầng 15, Tòa nhà Serenity Center</p>
+              </div>
+              <div class="map__contact">
+                <h3 class="map__info-title">Liên Hệ</h3>
+                <p class="map__info-text">+84 123 456 789</p>
+                <p class="map__info-subtext">info@serenityspa.com</p>
+              </div>
+              <div class="map__hours">
+                <h3 class="map__info-title">Giờ Làm Việc</h3>
+                <p class="map__info-text">Thứ 2 - Chủ Nhật: 10:00 - 22:00</p>
+                <p class="map__info-subtext">Thứ 7 - Chủ Nhật: 10:00 - 20:00</p>
+              </div>
+            </div>
+          -->
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <!-- <section class="page__cta cta">
+        <div class="cta__container">
+          <div class="cta__content">
+            <div class="cta__text-wrapper">
+              <h2 class="cta__title">Đặt Lịch Ngay Hôm Nay</h2>
+              <p class="cta__text">Trải nghiệm những dịch vụ spa chất lượng cao của chúng tôi.</p>
+              <a href="booking.html" class="cta__button">Đặt Lịch Ngay</a>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <a href="#" class="footer__policy">Chính Sách Bảo Mật – Điều Khoản Sử Dụng</a>
+        <a href="" class="footer__logo logo">
+          <img src="Images/logo.jpg" alt="Serenity Spa Logo">
+          Serenity Spa
+        </a>
+        <div class="footer__copyright">
+          Copyright © 2025 – Bản Quyền Thuộc Về Serenity Spa
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="NeUeqGNK-P7-tkkzx8iEc";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+
+</html>
